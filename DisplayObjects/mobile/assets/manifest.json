@@ -1,6 +1,6 @@
 {
-  "name": "OffChat",
-  "short_name": "OffChat",
+  "name": "PWA Application",
+  "short_name": "PWA App",
   "start_url": "../index.html",
   "display": "standalone",
   "icons": [{
@@ -8,6 +8,6 @@
     "sizes": "512x512",
     "type": "image/png"
   }],
-  "background_color": "#c8f7ff",
-  "theme_color": "#c8f7ff"
+  "background_color": "#4e8ef7",
+  "theme_color": "#4e8ef7"
 }
