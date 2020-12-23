@@ -7,6 +7,8 @@
   ↓OnChat [sequences.GenericSequence]: 🗏 sequences/OnChat.yaml
   ↓Import_XSD_schema [references.ImportXsdSchemaReference]: 
     urlpath: http://localhost:18080/convertigo/xsd/couchdb/CouchDb.xsd
+  ↓Project_reference [references.ProjectSchemaReference]: 
+    projectName: mobilebuilder_tpl_7_9_0=https://github.com/convertigo/c8oprj-mobilebuilder-tpl/archive/mobilebuilder_tpl_7_9_0.zip
   ↓OffChat [core.MobileApplication]: 
     applicationDescription: Allow user to type chat message event if offline
     applicationName: OffChat
