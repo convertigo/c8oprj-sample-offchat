@@ -47,7 +47,7 @@ title: Title for Chat
           textValue: 
             - xmlizable: 
               - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-              - MobileSmartSourceType: script:"OffChat with " + this.window.sessionStorage.dest
+              - MobileSmartSourceType: script:this.translate.instant("OffChat with ") + this.window.sessionStorage.dest
 ↓Content [mobile.components.UIDynamicElement-1517849574548]: 
   beanData: '{"ionBean":"Content"}'
   tagName: ion-content

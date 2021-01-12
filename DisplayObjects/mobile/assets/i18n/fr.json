@@ -1,0 +1,21 @@
+{
+ "Title_for_Login": "Title for Login",
+ "OffChat_Login": "Connexion à OffChat",
+ "Username__": "Utilisateur :",
+ "Password__": "Mot de passe :",
+ "Login": "Connexion",
+ "__Convertigo": "© Convertigo",
+ "Title_for_Sync": "Title for Sync",
+ "OffChat_Sync": "Synchronisation d'OffChat",
+ "Title_for_Lobby": "Title for Lobby",
+ "OffChat_Lobby": "Salon d'OffChat",
+ "Offline_Mode": "Mode Hors Ligne",
+ "Title_for_Chat": "Title for Chat",
+ "message": "message",
+ "Account_creation": "Création du compte automatique si l'",
+ "is_unknown": "est inconnu",
+ "username": "utilisateur",
+ "OffChat with ": "OffChat avec ",
+ "Welcome ": "Bienvenue ",
+ ", sync in progress!": ", synchronisation en cours !"
+}

@@ -73,7 +73,7 @@ title: Title for Sync
     beanData: |
       '{
        "ionBean": "ToastAction",
-       "message": "script:''Welcome '' + this.window.sessionStorage.username + '', sync in progress!''",
+       "message": "script:this.translate.instant(''Welcome '') + this.window.sessionStorage.username + this.translate.instant('', sync in progress!'')",
        "duration": "plain:10000",
        "dismissOnPageChange": "plain:true"
       }'
