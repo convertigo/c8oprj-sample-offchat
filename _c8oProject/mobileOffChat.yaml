@@ -7,10 +7,18 @@ componentScriptContent:
         /*End_c8o_AppImport*/
         /*Begin_c8o_AppDeclaration*/
         	/*End_c8o_AppDeclaration*/
+        /*Begin_c8o_AppSettings*/
+                /*End_c8o_AppSettings*/
         /*Begin_c8o_AppConstructor*/
         		this.c8o.logLevelLocal = C8oLogLevel.TRACE;
         		/*End_c8o_AppConstructor*/
         /*Begin_c8o_AppInitialization*/
+                        /* Uncomment the following lines to enable the i18n feature.
+                         * You should add a json per language in the assets/i18n folder. */
+                        translate.setDefaultLang('en');
+                        translate.use(translate.getBrowserLang());
+                        
+                        				/* Uncomment the following lines to enable the custom status bar color. */
                         statusBar.overlaysWebView(false);
                         statusBar.backgroundColorByHexString("#00a2c9");
                         statusBar.styleBlackOpaque();

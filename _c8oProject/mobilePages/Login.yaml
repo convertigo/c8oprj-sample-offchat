@@ -277,7 +277,9 @@ title: Title for Login
             beanData: '{"ionBean":"Paragraph"}'
             tagName: p
             ↓Fragment [mobile.components.UICustom-1517583057743]: 
-              htmlTemplate: '<b>Note</b>: Account creation is automatic if the <b>username</b> is unknown.'
+              htmlTemplate: |
+                '<b>Note</b>: {{ ''Account_creation'' | translate }} <b>{{ ''username'' | translate }}</b> {{ ''is_unknown'' | translate }}.
+                  '
 ↓Footer [mobile.components.UIDynamicElement-1517567298829]: 
   beanData: '{"ionBean":"Footer"}'
   tagName: ion-footer
