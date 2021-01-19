@@ -33,8 +33,8 @@ jobs:
     - name: Run Convertigo build
       env:
         C8O_SERVER: https://beta.convertigo.net/convertigo
-        C8O_USER: ${{ secrets.C8O_USER }}
-        C8O_PASSWORD: ${{ secrets.C8O_PASSWORD }}
+        C8O_USER: ${{ secrets.C8O_USER_DEMO }}
+        C8O_PASSWORD: ${{ secrets.C8O_PASSWORD_DEMO }}
       run: |
         echo "Build the Mobile Application and deploy to $C8O_SERVER" && \
         sh gradlew --no-daemon --stacktrace --info deploy \
