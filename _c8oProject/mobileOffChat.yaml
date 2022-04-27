@@ -275,9 +275,8 @@ tplProjectName: mobilebuilder_tpl_8_0_0_ngx
       - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
       - com.twinsoft.convertigo.beans.common.FormatedContent: 
         →: |
-          '.content {
-              background: url(../assets/icon.svg) 50% 66% / 80% no-repeat fixed;
-              background-color: var(--ion-color-light);
+          'ion-content {
+              --background: url(''../../../../DisplayObjects/mobile/assets/icon.svg'') 50% 66% / 80% no-repeat fixed;
           }
           
           p {
