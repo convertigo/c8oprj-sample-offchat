@@ -1,6 +1,6 @@
 {
-  "name": "PWA Application",
-  "short_name": "PWA App",
+  "name": "Offchat",
+  "short_name": "Offchat",
   "start_url": "../index.html",
   "display": "standalone",
   "icons": [{
