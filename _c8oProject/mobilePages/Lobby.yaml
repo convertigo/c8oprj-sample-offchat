@@ -45,7 +45,6 @@ title: Title for Lobby
           beanData: '{"ionBean":"Icon","IconName":"plain:ellipsis-vertical-outline"}'
           tagName: ion-icon
         ↓Event [ngx.components.UIControlEvent-1518088441443]: 
-          attrName: (click)
           ↓CustomAction [ngx.components.UICustomAction-1518088441460]: 
             actionValue: 
               - xmlizable: 
@@ -146,7 +145,6 @@ title: Title for Lobby
                         - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                         - MobileSmartSourceType: source:{"filter":"Iteration","project":"sampleMobileOffChat","input":"item1517843119306"}
               ↓Event [ngx.components.UIControlEvent-1517848722634]: 
-                attrName: (click)
                 ↓CustomAction [ngx.components.UICustomAction-1517918128977]: 
                   actionValue: 
                     - xmlizable: 

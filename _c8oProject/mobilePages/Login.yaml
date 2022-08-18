@@ -46,7 +46,6 @@ title: Title for Login
           beanData: '{"ionBean":"Icon","IconName":"plain:ellipsis-vertical-outline"}'
           tagName: ion-icon
         ↓Event [ngx.components.UIControlEvent-1517825155947]: 
-          attrName: (click)
           ↓CustomAction [ngx.components.UICustomAction-1517827010857]: 
             actionValue: 
               - xmlizable: 
