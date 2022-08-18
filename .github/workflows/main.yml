@@ -25,11 +25,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3.0.2
+      uses: actions/checkout@v3
       with:
         ssh-key: ${{ secrets.SSH_KEY }}
     - name: Setup Java
-      uses: actions/setup-java@v3.4.1
+      uses: actions/setup-java@v3
       with:
         java-version: '17'
         distribution: 'temurin'
@@ -64,8 +64,12 @@ jobs:
         C8O_PASSWORD: ${{ secrets.C8O_PASSWORD_BETA }}
       run: |
         echo "Build the Application and deploy to $C8O_SERVER" && \
-        sh gradlew --stacktrace --info deploy \
+        sh gradlew --stacktrace --info deploy car \
           -Pconvertigo.deploy.server=$C8O_SERVER \
           -Pconvertigo.deploy.user=$C8O_USER \
           -Pconvertigo.deploy.password=$C8O_PASSWORD \
           -Pconvertigo.load.mobileApplicationEndpoint=$C8O_SERVER
+    - name: Upload Built Project
+      uses: actions/upload-artifact@v3
+      with:
+        path: build/*.car
