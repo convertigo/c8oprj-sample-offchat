@@ -18,7 +18,7 @@ name: Convertigo CI
 # events but only for the master branch
 on:
   push:
-    branches: [ beta ]
+    branches: [ ci ]
 
 jobs:
   build:
@@ -39,14 +39,14 @@ jobs:
           path: |
              ~/.gradle/caches
              ~/.gradle/wrapper
-          key: ${{ runner.os }}-gradle-caches-${{ hashFiles('**/*.gradle', '**/*.gradle.kts', '**/gradle/wrapper/gradle-wrapper.properties') }}
-          restore-keys: ${{ runner.os }}-gradle-caches-
+          key: ${{ runner.os }}-gradle-caches-v1-${{ hashFiles('**/*.gradle', '**/gradle/wrapper/gradle-wrapper.properties') }}
+          restore-keys: ${{ runner.os }}-gradle-caches-v1-
     - name: Convertigo generate application code
       env:
         C8O_SERVER: ${{ secrets.C8O_SERVER_BETA }}
       run: |
         echo "Generate Mobile Builder App" && \
-        sh gradlew --stacktrace --info generateMobileBuilder \
+        sh gradlew --stacktrace --info generateMobileBuilder export \
           -Pconvertigo.load.mobileApplicationEndpoint=$C8O_SERVER
     - name: Cache Node Modules
       uses: actions/cache@v3
@@ -57,30 +57,14 @@ jobs:
             /home/runner/convertigo/nodes
           key: ${{ runner.os }}-build-node-${{ hashFiles('**/package.json', '**/_private/ionic/version.json') }}
           restore-keys: ${{ runner.os }}-build-node-
-
     - name: Convertigo build, deploy to server and export the application
       env:
         C8O_SERVER: ${{ secrets.C8O_SERVER_BETA }}
         C8O_USER: ${{ secrets.C8O_USER_BETA }}
         C8O_PASSWORD: ${{ secrets.C8O_PASSWORD_BETA }}
-      if: ${{ (env.C8O_SERVER != '' && env.C8O_USER != '' && env.C8O_PASSWORD != '') }}
       run: |
         echo "Build, deploy to $C8O_SERVER and export to project.zip the application" && \
         sh gradlew --stacktrace --info car deploy -x generateMobileBuilder \
-          -Pconvertigo.load.mobileApplicationEndpoint=$C8O_SERVER \
-          -Pconvertigo.deploy.server=$C8O_SERVER \
-          -Pconvertigo.deploy.user=$C8O_USER \
-          -Pconvertigo.deploy.password=$C8O_PASSWORD
-    - name: Convertigo build and export the application
-      env:
-        C8O_SERVER: ${{ secrets.C8O_SERVER_BETA }}
-        C8O_USER: ${{ secrets.C8O_USER_BETA }}
-        C8O_PASSWORD: ${{ secrets.C8O_PASSWORD_BETA }}
-      if: ${{ !(env.C8O_SERVER != '' && env.C8O_USER != '' && env.C8O_PASSWORD != '') }}
-      run: |
-        echo "Build and export to project.zip the application" && \
-        sh gradlew --stacktrace --info car deploy -x generateMobileBuilder \
-          -Pconvertigo.load.mobileApplicationEndpoint=$C8O_SERVER \
           -Pconvertigo.deploy.server=$C8O_SERVER \
           -Pconvertigo.deploy.user=$C8O_USER \
           -Pconvertigo.deploy.password=$C8O_PASSWORD
