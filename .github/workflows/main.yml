@@ -46,7 +46,7 @@ jobs:
         C8O_SERVER: ${{ secrets.C8O_SERVER_BETA }}
       run: |
         echo "Generate Mobile Builder App" && \
-        sh gradlew --stacktrace --info generateMobileBuilder export \
+        sh gradlew --stacktrace --info generateMobileBuilder export -x compileMobileBuilder \
           -Pconvertigo.load.mobileApplicationEndpoint=$C8O_SERVER
     - name: Cache Node Modules
       uses: actions/cache@v3
