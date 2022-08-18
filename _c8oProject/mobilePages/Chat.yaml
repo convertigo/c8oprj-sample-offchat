@@ -31,257 +31,256 @@ scriptContent:
         '
 segment: Chat
 title: Title for Chat
-↓Header [mobile.components.UIDynamicElement-1517849497973]: 
+↓Header [ngx.components.UIDynamicElement-1517849497973]: 
   beanData: '{"ionBean":"Header"}'
   tagName: ion-header
-  ↓NavBar [mobile.components.UIDynamicElement-1517849498007]: 
-    beanData: '{"ionBean":"NavBar","IonColor":"plain:primary"}'
-    tagName: ion-navbar
-    ↓BarTitle [mobile.components.UIDynamicElement-1517849498041]: 
+  ↓ToolBar [ngx.components.UIDynamicElement-1517849498007]: 
+    beanData: '{"ionBean":"ToolBar","IonColor":"plain:primary"}'
+    tagName: ion-toolbar
+    ↓BarTitle [ngx.components.UIDynamicElement-1517849498041]: 
       beanData: '{"ionBean":"BarTitle"}'
       tagName: ion-title
-      ↓TextFormat [mobile.components.UIDynamicElement-1517849498072]: 
-        beanData: '{"ionBean":"TextFormat","TextCenter":"plain:text-center"}'
+      ↓FormatLayout [ngx.components.UIDynamicAttr-1643627908864]: 
+        beanData: '{"ionBean":"FormatLayout","TextAlignment":"plain:ion-text-center"}'
+        comment: FormatLayout
         tagName: div
-        ↓Text [mobile.components.UIText-1517849498103]: 
-          textValue: 
-            - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-              - MobileSmartSourceType: script:this.translate.instant("OffChat with ") + this.window.sessionStorage.dest
-↓Content [mobile.components.UIDynamicElement-1517849574548]: 
+      ↓Text [ngx.components.UIText-1517849498103]: 
+        i18n: true
+        textValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:this.translate.instant("OffChat with ") + this.window.sessionStorage.dest
+    ↓ButtonSet [ngx.components.UIDynamicElement-1643643846596]: 
+      beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:start"}'
+      tagName: ion-buttons
+      ↓BackButton [ngx.components.UIDynamicElement-1643644019958]: 
+        beanData: '{"ionBean":"BackButton"}'
+        tagName: ion-back-button
+↓Content [ngx.components.UIDynamicElement-1517849574548]: 
   beanData: '{"ionBean":"Content"}'
   tagName: ion-content
-  ↓TextFormat [mobile.components.UIDynamicElement-1518021234144]: 
-    beanData: '{"ionBean":"TextFormat","TextWrap":"plain:text-wrap"}'
+  ↓FormatLayout [ngx.components.UIDynamicAttr-1643627908878]: 
+    beanData: '{"ionBean":"FormatLayout","TextAlignment":"plain:ion-text-wrap"}'
+    comment: FormatLayout
     tagName: div
-    ↓CardContainer [mobile.components.UIDynamicElement-1517849585876]: 
-      beanData: '{"ionBean":"Card"}'
-      tagName: ion-card
-      ↓CardContent [mobile.components.UIDynamicElement-1517849588610]: 
-        beanData: '{"ionBean":"CardContent"}'
-        tagName: ion-card-content
-        ↓Form [mobile.components.UIForm-1517850194442]: 
-          ↓GenericItem [mobile.components.UIDynamicElement-1517850283058]: 
-            beanData: '{"ionBean":"ListItem"}'
-            tagName: ion-item
-            ↓MessageLabel [mobile.components.UIDynamicElement-1517850172878]: 
-              beanData: '{"ionBean":"Label","Floating":"plain:floating"}'
-              tagName: ion-label
-              ↓message [mobile.components.UIText-1517850172912]: 
-                textValue: 
-                  - xmlizable: 
-                    - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-                    - MobileSmartSourceType: plain:message
-            ↓message [mobile.components.UIDynamicElement-1517850172946]: 
-              beanData: |
-                '{
-                 "ionBean": "Input",
-                 "FormControlName": "plain:message",
-                 "Type": "plain:text"
-                }'
-              tagName: ion-input
-              ↓CustomValidator [mobile.components.UIFormCustomValidator-1518002152000]: 
-                validatorValue: 
-                  - xmlizable: 
-                    - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
-                    - com.twinsoft.convertigo.beans.common.FormatedContent: 
-                      →: |
-                        '            let hasImage = false;
-                                    try {
-                                        hasImage = window.document.getElementById(''photo'').getAttribute(''src'').length != 0;
-                                    } catch (e) {
-                                    }
-                                    try {
-                                	    if (c.value.length == 0 && !hasImage) {
-                                	        return {''empty'': true};
-                                	    }
-                                    } catch (e) {
-                                        return {''exception'': true};
-                                    }
-                            		return null;
-                        '
-          ↓Image [mobile.components.UIDynamicElement-1517996593478]: 
-            beanData: '{"ionBean":"Image","url":"script:this.router.sharedObject[''photo''] || ''''"}'
-            selfClose: true
-            tagName: img
-            ↓Attr [mobile.components.UIAttribute-1517997468359]: 
-              attrName: id
-              attrValue: 
+  ↓CardContainer [ngx.components.UIDynamicElement-1517849585876]: 
+    beanData: '{"ionBean":"Card"}'
+    tagName: ion-card
+    ↓CardContent [ngx.components.UIDynamicElement-1517849588610]: 
+      beanData: '{"ionBean":"CardContent"}'
+      tagName: ion-card-content
+      ↓Form [ngx.components.UIForm-1517850194442]: 
+        identifier: form1517850194442
+        ↓GenericItem [ngx.components.UIDynamicElement-1517850283058]: 
+          beanData: '{"ionBean":"ListItem"}'
+          tagName: ion-item
+          ↓MessageLabel [ngx.components.UIDynamicElement-1517850172878]: 
+            beanData: '{"ionBean":"Label","Position":"plain:floating"}'
+            tagName: ion-label
+            ↓message [ngx.components.UIText-1517850172912]: 
+              i18n: true
+              textValue: 
                 - xmlizable: 
-                  - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-                  - MobileSmartSourceType: plain:photo
-          ↓ButtonSet [mobile.components.UIDynamicElement-1517909662176]: 
-            beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:right"}'
-            tagName: ion-buttons
-            ↓ResetButton [mobile.components.UIDynamicElement-1517999213040]: 
-              beanData: '{"ionBean":"ResetButton","ButtonFormType":"plain:button"}'
-              tagName: button
-              ↓Icon [mobile.components.UIDynamicElement-1517999256230]: 
-                beanData: '{"ionBean":"Icon","IconName":"plain:trash"}'
-                tagName: ion-icon
-              ↓Event [mobile.components.UIControlEvent-1518001691979]: 
-                ↓ClearForm [mobile.components.UIDynamicAction-1518001706502]: 
-                  beanData: '{"ionBean":"IfAction","condition":"script:this.clearForm()"}'
-            ↓ButtonGallery [mobile.components.UIDynamicElement-1518702232589]: 
-              beanData: '{"ionBean":"Button","IconOnly":"plain:icon-only"}'
-              tagName: button
-              ↓Icon [mobile.components.UIDynamicElement-1518702232652]: 
-                beanData: '{"ionBean":"Icon","IconName":"plain:images"}'
-                tagName: ion-icon
-              ↓Event [mobile.components.UIControlEvent-1518702232697]: 
-                ↓Camera [mobile.components.UIDynamicAction-1518702232732]: 
-                  beanData: |
-                    '{
-                     "ionBean": "CameraAction",
-                     "quality": "script:75",
-                     "destinationType": "plain:FILE_URI",
-                     "sourceType": "plain:PHOTOLIBRARY",
-                     "targetWidth": "script:640",
-                     "targetHeight": "script:640",
-                     "cameraDirection": "plain:FRONT"
-                    }'
-                  ↓SetGlobal [mobile.components.UIDynamicAction-1518702232797]: 
-                    beanData: |
-                      '{
-                       "ionBean": "SetGlobalAction",
-                       "Property": "plain:photo",
-                       "Value": "script:out"
-                      }'
-                    ↓ValidateForm [mobile.components.UIDynamicAction-1518702232858]: 
-                      beanData: '{"ionBean":"IfAction","condition":"script:this.validateForm()"}'
-            ↓ButtonPhoto [mobile.components.UIDynamicElement-1517909749723]: 
-              beanData: '{"ionBean":"Button","IconOnly":"plain:icon-only"}'
-              tagName: button
-              ↓Icon [mobile.components.UIDynamicElement-1517909753358]: 
-                beanData: '{"ionBean":"Icon","IconName":"plain:camera"}'
-                tagName: ion-icon
-              ↓Event [mobile.components.UIControlEvent-1517995956259]: 
-                ↓Camera [mobile.components.UIDynamicAction-1518528294291]: 
-                  beanData: |
-                    '{
-                     "ionBean": "CameraAction",
-                     "quality": "script:75",
-                     "destinationType": "plain:FILE_URI",
-                     "targetWidth": "script:640",
-                     "targetHeight": "script:640",
-                     "cameraDirection": "plain:FRONT"
-                    }'
-                  ↓SetGlobal [mobile.components.UIDynamicAction-1518528390020]: 
-                    beanData: |
-                      '{
-                       "ionBean": "SetGlobalAction",
-                       "Property": "plain:photo",
-                       "Value": "script:out"
-                      }'
-                    ↓ValidateForm [mobile.components.UIDynamicAction-1518529740890]: 
-                      beanData: '{"ionBean":"IfAction","condition":"script:this.validateForm()"}'
-            ↓SubmitButton [mobile.components.UIDynamicElement-1517850328552]: 
-              beanData: '{"ionBean":"SubmitButton","IconOnly":"plain:icon-only"}'
-              tagName: button
-              ↓Icon [mobile.components.UIDynamicElement-1517909691234]: 
-                beanData: '{"ionBean":"Icon","IconName":"plain:send"}'
-                tagName: ion-icon
-          ↓Event [mobile.components.UIControlEvent-1517917394981]: 
-            attrName: (ngSubmit)
-            eventName: onSubmit
-            ↓PostData [mobile.components.UIDynamicAction-1517917440325]: 
-              beanData: |
-                '{
-                 "ionBean": "FullSyncPostAction",
-                 "requestable": "plain:sampleMobileOffChat.offchat_fullsync",
-                 "_use_policy": "plain:none"
-                }'
-              ↓message [mobile.components.UIControlVariable-1517917507970]: 
-                varValue: 
-                  - xmlizable: 
-                    - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-                    - MobileSmartSourceType: source:{"filter":"Form","project":"sampleMobileOffChat","input":"form1517850194442?.controls['message']?.value"}
-              ↓user [mobile.components.UIControlVariable-1517917846817]: 
-                varValue: 
-                  - xmlizable: 
-                    - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-                    - MobileSmartSourceType: script:this.window.sessionStorage.dest
-              ↓type [mobile.components.UIControlVariable-1517922496998]: 
-                varValue: 
-                  - xmlizable: 
-                    - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-                    - MobileSmartSourceType: plain:message
-              ↓dir [mobile.components.UIControlVariable-1517922499531]: 
-                varValue: 
-                  - xmlizable: 
-                    - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-                    - MobileSmartSourceType: plain:to
-              ↓IfPhoto [mobile.components.UIDynamicAction-1517999085331]: 
-                beanData: '{"ionBean":"IfAction","condition":"script:document.getElementById(''photo'').getAttribute(''src'').length != 0"}'
-                ↓PutAttachment [mobile.components.UIDynamicAction-1517998064600]: 
-                  beanData: |
-                    '{
-                     "ionBean": "FullSyncPutAttachmentAction",
-                     "requestable": "plain:sampleMobileOffChat.offchat_fullsync",
-                     "docid": "script:stack[''PostData''].out.id",
-                     "name": "plain:img.jpeg",
-                     "content_type": "plain:image\/jpeg",
-                     "content": "script:document.getElementById(''photo'').getAttribute(''src'')"
-                    }'
-                  ↓ClearForm [mobile.components.UIDynamicAction-1518008222791]: 
-                    beanData: '{"ionBean":"IfAction","condition":"script:this.clearForm()"}'
-              ↓Else [mobile.components.UIDynamicAction-1518008230653]: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: plain:message
+          ↓message [ngx.components.UIDynamicElement-1517850172946]: 
+            beanData: |
+              '{
+               "ionBean": "Input",
+               "ControlName": "plain:message",
+               "Debounce": "plain:0"
+              }'
+            tagName: ion-input
+        ↓Image [ngx.components.UIDynamicElement-1517996593478]: 
+          beanData: '{"ionBean":"Image","url":"script:this.router.sharedObject[''photo''] || ''''"}'
+          selfClose: true
+          tagName: img
+          ↓Attr [ngx.components.UIAttribute-1517997468359]: 
+            attrName: id
+            attrValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: plain:photo
+        ↓ButtonSet [ngx.components.UIDynamicElement-1517909662176]: 
+          beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:end"}'
+          tagName: ion-buttons
+          ↓ResetButton [ngx.components.UIDynamicElement-1517999213040]: 
+            beanData: '{"ionBean":"ResetButton","ButtonFormType":"plain:button"}'
+            tagName: ion-button
+            ↓Icon [ngx.components.UIDynamicElement-1517999256230]: 
+              beanData: '{"ionBean":"Icon","IconName":"plain:trash"}'
+              tagName: ion-icon
+            ↓Event [ngx.components.UIControlEvent-1518001691979]: 
+              attrName: (click)
+              ↓ClearForm [ngx.components.UIDynamicAction-1518001706502]: 
+                beanData: '{"ionBean":"IfAction","condition":"script:this.clearForm()"}'
+          ↓ButtonGallery [ngx.components.UIDynamicElement-1518702232589]: 
+            beanData: '{"ionBean":"Button"}'
+            tagName: ion-button
+            ↓Icon [ngx.components.UIDynamicElement-1518702232652]: 
+              beanData: '{"ionBean":"Icon","IconName":"plain:images"}'
+              tagName: ion-icon
+            ↓Event [ngx.components.UIControlEvent-1518702232697]: 
+              attrName: (click)
+              ↓Camera [ngx.components.UIDynamicAction-1518702232732]: 
                 beanData: |
                   '{
-                   "ionBean": "IfAction",
-                   "condition": "script:document.getElementById(''photo'').getAttribute(''src'').length != 0",
-                   "negate": "plain:true"
+                   "ionBean": "CameraAction",
+                   "quality": "script:75",
+                   "destinationType": "plain:FILE_URI",
+                   "sourceType": "plain:PHOTOLIBRARY",
+                   "targetWidth": "script:640",
+                   "targetHeight": "script:640",
+                   "cameraDirection": "plain:FRONT"
                   }'
-                ↓ClearForm [mobile.components.UIDynamicAction-1518008230718]: 
+                ↓SetGlobal [ngx.components.UIDynamicAction-1518702232797]: 
+                  beanData: |
+                    '{
+                     "ionBean": "SetGlobalAction",
+                     "Property": "plain:photo",
+                     "Value": "script:out"
+                    }'
+                  ↓ValidateForm [ngx.components.UIDynamicAction-1518702232858]: 
+                    beanData: '{"ionBean":"IfAction","condition":"script:this.validateForm()"}'
+          ↓ButtonPhoto [ngx.components.UIDynamicElement-1517909749723]: 
+            beanData: '{"ionBean":"Button"}'
+            tagName: ion-button
+            ↓Icon [ngx.components.UIDynamicElement-1517909753358]: 
+              beanData: '{"ionBean":"Icon","IconName":"plain:camera"}'
+              tagName: ion-icon
+            ↓Event [ngx.components.UIControlEvent-1517995956259]: 
+              attrName: (click)
+              ↓Camera [ngx.components.UIDynamicAction-1518528294291]: 
+                beanData: |
+                  '{
+                   "ionBean": "CameraAction",
+                   "quality": "script:75",
+                   "destinationType": "plain:FILE_URI",
+                   "targetWidth": "script:640",
+                   "targetHeight": "script:640",
+                   "cameraDirection": "plain:FRONT"
+                  }'
+                ↓SetGlobal [ngx.components.UIDynamicAction-1518528390020]: 
+                  beanData: |
+                    '{
+                     "ionBean": "SetGlobalAction",
+                     "Property": "plain:photo",
+                     "Value": "script:out"
+                    }'
+                  ↓ValidateForm [ngx.components.UIDynamicAction-1518529740890]: 
+                    beanData: '{"ionBean":"IfAction","condition":"script:this.validateForm()"}'
+          ↓SubmitButton [ngx.components.UIDynamicElement-1517850328552]: 
+            beanData: '{"ionBean":"SubmitButton","IconSlot":"plain:icon-only"}'
+            tagName: ion-button
+            ↓Icon [ngx.components.UIDynamicElement-1517909691234]: 
+              beanData: '{"ionBean":"Icon","IconName":"plain:send"}'
+              tagName: ion-icon
+        ↓Event [ngx.components.UIControlEvent-1517917394981]: 
+          attrName: (ngSubmit)
+          eventName: onSubmit
+          ↓PostData [ngx.components.UIDynamicAction-1517917440325]: 
+            beanData: |
+              '{
+               "ionBean": "FullSyncPostAction",
+               "requestable": "plain:sampleMobileOffChat.offchat_fullsync",
+               "_use_policy": "plain:none"
+              }'
+            ↓message [ngx.components.UIControlVariable-1517917507970]: 
+              varValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: source:{"filter":"Form","project":"sampleMobileOffChat","input":"form1517850194442?.controls['message']?.value"}
+            ↓user [ngx.components.UIControlVariable-1517917846817]: 
+              varValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: script:this.window.sessionStorage.dest
+            ↓type [ngx.components.UIControlVariable-1517922496998]: 
+              varValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: plain:message
+            ↓dir [ngx.components.UIControlVariable-1517922499531]: 
+              varValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: plain:to
+            ↓IfPhoto [ngx.components.UIDynamicAction-1517999085331]: 
+              beanData: '{"ionBean":"IfAction","condition":"script:document.getElementById(''photo'').getAttribute(''src'').length != 0"}'
+              ↓PutAttachment [ngx.components.UIDynamicAction-1517998064600]: 
+                beanData: |
+                  '{
+                   "ionBean": "FullSyncPutAttachmentAction",
+                   "requestable": "plain:sampleMobileOffChat.offchat_fullsync",
+                   "docid": "script:stack[''PostData''].out.id",
+                   "name": "plain:img.jpeg",
+                   "content_type": "plain:image\/jpeg",
+                   "content": "script:document.getElementById(''photo'').getAttribute(''src'')"
+                  }'
+                ↓ClearForm [ngx.components.UIDynamicAction-1518008222791]: 
                   beanData: '{"ionBean":"IfAction","condition":"script:this.clearForm()"}'
-              ↓ts [mobile.components.UIControlVariable-1518022800702]: 
-                varValue: 
-                  - xmlizable: 
-                    - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-                    - MobileSmartSourceType: script:this.window.localStorage.decTs * 1 + new Date().getTime()
-    ↓CardContainer1 [mobile.components.UIDynamicElement-1518001966264]: 
-      beanData: '{"ionBean":"Card"}'
-      tagName: ion-card
-      ↓ListContainer [mobile.components.UIDynamicElement-1517849854716]: 
-        beanData: '{"ionBean":"List"}'
-        tagName: ion-list
-        ↓Directive [mobile.components.UIControlDirective-1517849900594]: 
+            ↓Else [ngx.components.UIDynamicAction-1518008230653]: 
+              beanData: |
+                '{
+                 "ionBean": "IfAction",
+                 "condition": "script:document.getElementById(''photo'').getAttribute(''src'').length != 0",
+                 "negate": "plain:true"
+                }'
+              ↓ClearForm [ngx.components.UIDynamicAction-1518008230718]: 
+                beanData: '{"ionBean":"IfAction","condition":"script:this.clearForm()"}'
+            ↓ts [ngx.components.UIControlVariable-1518022800702]: 
+              varValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: script:this.window.localStorage.decTs * 1 + new Date().getTime()
+  ↓CardContainer1 [ngx.components.UIDynamicElement-1518001966264]: 
+    beanData: '{"ionBean":"Card"}'
+    tagName: ion-card
+    ↓ListContainer [ngx.components.UIDynamicElement-1517849854716]: 
+      beanData: '{"ionBean":"List"}'
+      tagName: ion-list
+      ↓Directive [ngx.components.UIControlDirective-1517849900594]: 
+        directiveSource: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: source:{"filter":"Database","project":"sampleMobileOffChat","input":"listen(['fs:\/\/offchat_fullsync.view, {ddoc='OffChat', view='getChat', include_docs='false'}'])?.rows"}
+        ↓Directive [ngx.components.UIControlDirective-1517912758916]: 
+          directiveName: If
           directiveSource: 
             - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-              - MobileSmartSourceType: source:{"filter":"Database","project":"sampleMobileOffChat","input":"listen(['fs:\/\/offchat_fullsync.view, {ddoc='OffChat', view='getChat', include_docs='false'}'])?.rows"}
-          ↓Directive [mobile.components.UIControlDirective-1517912758916]: 
-            directiveName: If
-            directiveSource: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-                - MobileSmartSourceType: source:{"filter":"Iteration","project":"sampleMobileOffChat","input":"item1517849900594?.value?.dir == 'to'"}
-            ↓GenericItem [mobile.components.UIDynamicElement-1517849944165]: 
-              beanData: '{"ionBean":"ListItem"}'
-              tagName: ion-item
-              ↓AvatarItem [mobile.components.UIDynamicElement-1517913225485]: 
-                beanData: '{"ionBean":"Avatar"}'
-                tagName: ion-avatar
-                ↓Icon [mobile.components.UIDynamicElement-1517913258594]: 
-                  beanData: '{"ionBean":"Icon","IconName":"plain:ionitron"}'
-                  tagName: ion-icon
-              ↓H2 [mobile.components.UIDynamicElement-1517913138703]: 
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+              - MobileSmartSourceType: source:{"filter":"Iteration","project":"sampleMobileOffChat","input":"item1517849900594?.value?.dir == 'to'"}
+          ↓GenericItem [ngx.components.UIDynamicElement-1517849944165]: 
+            beanData: '{"ionBean":"ListItem"}'
+            tagName: ion-item
+            ↓AvatarItem [ngx.components.UIDynamicElement-1517913225485]: 
+              beanData: '{"ionBean":"Avatar","IonSlot":"plain:start"}'
+              tagName: ion-avatar
+              ↓Icon [ngx.components.UIDynamicElement-1517913258594]: 
+                beanData: '{"ionBean":"Icon","IconName":"plain:logo-ionitron"}'
+                tagName: ion-icon
+            ↓Label [ngx.components.UIDynamicElement-1643644449492]: 
+              beanData: '{"ionBean":"Label"}'
+              tagName: ion-label
+              ↓H2 [ngx.components.UIDynamicElement-1517913138703]: 
                 beanData: '{"ionBean":"Heading2"}'
                 tagName: h2
-                ↓Text [mobile.components.UIText-1517912810323]: 
+                ↓Text [ngx.components.UIText-1517912810323]: 
+                  i18n: true
                   textValue: 
                     - xmlizable: 
-                      - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                       - MobileSmartSourceType: script:window.sessionStorage.username
-                ↓Span [mobile.components.UIDynamicElement-1518094131695]: 
+                ↓Span [ngx.components.UIDynamicElement-1518094131695]: 
                   beanData: '{"ionBean":"SpanTag"}'
                   tagName: span
-                  ↓Text [mobile.components.UIText-1518093127569]: 
+                  ↓Text [ngx.components.UIText-1518093127569]: 
+                    i18n: true
                     textValue: 
                       - xmlizable: 
-                        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+                        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                         - MobileSmartSourceType: source:{"filter":"Iteration","project":"sampleMobileOffChat","input":"toDate(item1517849900594?.value?.ts)"}
-                  ↓Style [mobile.components.UIStyle-1518094168403]: 
+                  ↓Style [ngx.components.UIStyle-1518094168403]: 
                     styleContent: 
                       - xmlizable: 
                         - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
@@ -292,21 +291,22 @@ title: Title for Chat
                                 padding-left: 15px;
                                 padding-right: 15px;
                             '
-              ↓H3 [mobile.components.UIDynamicElement-1517913154295]: 
+              ↓H3 [ngx.components.UIDynamicElement-1517913154295]: 
                 beanData: '{"ionBean":"Heading3"}'
                 tagName: h3
-                ↓Text1 [mobile.components.UIText-1517849979669]: 
+                ↓Text1 [ngx.components.UIText-1517849979669]: 
+                  i18n: true
                   textValue: 
                     - xmlizable: 
-                      - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                       - MobileSmartSourceType: source:{"filter":"Iteration","project":"sampleMobileOffChat","input":"item1517849900594?.value?.message"}
-              ↓Directive [mobile.components.UIControlDirective-1517910361136]: 
+              ↓Directive [ngx.components.UIControlDirective-1517910361136]: 
                 directiveName: If
                 directiveSource: 
                   - xmlizable: 
-                    - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                     - MobileSmartSourceType: source:{"filter":"Iteration","project":"sampleMobileOffChat","input":"item1517849900594?.doc?._attachments"}
-                ↓FSImage [mobile.components.UIDynamicElement-1517910596011]: 
+                ↓FSImage [ngx.components.UIDynamicElement-1517910596011]: 
                   beanData: |
                     '{
                      "ionBean": "FSImage",
@@ -318,123 +318,133 @@ title: Title for Chat
                     }'
                   selfClose: true
                   tagName: img
-          ↓Directive1 [mobile.components.UIControlDirective-1517912810286]: 
-            directiveName: If
-            directiveSource: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-                - MobileSmartSourceType: source:{"filter":"Iteration","project":"sampleMobileOffChat","input":"item1517849900594?.value?.dir == 'from'"}
-            ↓GenericItem [mobile.components.UIDynamicElement-1517912810303]: 
-              beanData: '{"ionBean":"ListItem"}'
-              tagName: ion-item
-              ↓AvatarItem [mobile.components.UIDynamicElement-1517913370313]: 
-                beanData: '{"ionBean":"Avatar","ItemPosition":"plain:item-right"}'
-                tagName: ion-avatar
-                ↓Icon [mobile.components.UIDynamicElement-1517913370330]: 
-                  beanData: '{"ionBean":"Icon","IconName":"plain:happy"}'
-                  tagName: ion-icon
-              ↓TextFormat [mobile.components.UIDynamicElement-1517915194451]: 
-                beanData: '{"ionBean":"TextFormat","TextRight":"plain:text-right"}'
-                tagName: div
-                ↓H2 [mobile.components.UIDynamicElement-1517913407093]: 
-                  beanData: '{"ionBean":"Heading2"}'
-                  tagName: h2
-                  ↓Span [mobile.components.UIDynamicElement-1518094703835]: 
-                    beanData: '{"ionBean":"SpanTag"}'
-                    tagName: span
-                    ↓Text [mobile.components.UIText-1518094703863]: 
-                      textValue: 
-                        - xmlizable: 
-                          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-                          - MobileSmartSourceType: source:{"filter":"Iteration","project":"sampleMobileOffChat","input":"toDate(item1517849900594?.value?.ts)"}
-                    ↓Style [mobile.components.UIStyle-1518094703889]: 
-                      styleContent: 
-                        - xmlizable: 
-                          - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
-                          - com.twinsoft.convertigo.beans.common.FormatedContent: 
-                            →: |
-                              '	font-size: 66%;
-                              
-                                  color: darkgray;
-                              
-                                  padding-left: 15px;
-                              
-                                  padding-right: 15px;
-                              
-                              '
-                  ↓Text1 [mobile.components.UIText-1517922896792]: 
+        ↓Directive1 [ngx.components.UIControlDirective-1517912810286]: 
+          directiveName: If
+          directiveSource: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+              - MobileSmartSourceType: source:{"filter":"Iteration","project":"sampleMobileOffChat","input":"item1517849900594?.value?.dir == 'from'"}
+          ↓GenericItem [ngx.components.UIDynamicElement-1517912810303]: 
+            beanData: '{"ionBean":"ListItem"}'
+            tagName: ion-item
+            ↓AvatarItem [ngx.components.UIDynamicElement-1517913370313]: 
+              beanData: '{"ionBean":"Avatar","IonSlot":"plain:end"}'
+              tagName: ion-avatar
+              ↓Icon [ngx.components.UIDynamicElement-1517913370330]: 
+                beanData: '{"ionBean":"Icon","IconName":"plain:happy"}'
+                tagName: ion-icon
+            ↓FormatLayout [ngx.components.UIDynamicAttr-1643627908876]: 
+              beanData: '{"ionBean":"FormatLayout","TextAlignment":"plain:ion-text-right"}'
+              comment: FormatLayout
+              tagName: div
+            ↓Label [ngx.components.UIDynamicElement-1643644581124]: 
+              beanData: '{"ionBean":"Label"}'
+              tagName: ion-label
+              ↓H2 [ngx.components.UIDynamicElement-1517913407093]: 
+                beanData: '{"ionBean":"Heading2"}'
+                tagName: h2
+                ↓Span [ngx.components.UIDynamicElement-1518094703835]: 
+                  beanData: '{"ionBean":"SpanTag"}'
+                  tagName: span
+                  ↓Text [ngx.components.UIText-1518094703863]: 
+                    i18n: true
                     textValue: 
                       - xmlizable: 
-                        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-                        - MobileSmartSourceType: source:{"filter":"Iteration","project":"sampleMobileOffChat","input":"item1517849900594?.value?.user"}
-                ↓H3 [mobile.components.UIDynamicElement-1517913423897]: 
-                  beanData: '{"ionBean":"Heading3"}'
-                  tagName: h3
-                  ↓Text1 [mobile.components.UIText-1517912810341]: 
-                    textValue: 
+                        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                        - MobileSmartSourceType: source:{"filter":"Iteration","project":"sampleMobileOffChat","input":"toDate(item1517849900594?.value?.ts)"}
+                  ↓Style [ngx.components.UIStyle-1518094703889]: 
+                    styleContent: 
                       - xmlizable: 
-                        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-                        - MobileSmartSourceType: source:{"filter":"Iteration","project":"sampleMobileOffChat","input":"item1517849900594?.value?.message"}
-                ↓Directive [mobile.components.UIControlDirective-1517912810374]: 
-                  directiveName: If
-                  directiveSource: 
+                        - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                        - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                          →: |
+                            '	font-size: 66%;
+                            
+                                color: darkgray;
+                            
+                                padding-left: 15px;
+                            
+                                padding-right: 15px;
+                            
+                            '
+                ↓Text1 [ngx.components.UIText-1517922896792]: 
+                  i18n: true
+                  textValue: 
                     - xmlizable: 
-                      - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-                      - MobileSmartSourceType: source:{"filter":"Iteration","project":"sampleMobileOffChat","input":"item1517849900594?.doc?._attachments"}
-                  ↓Text3 [mobile.components.UIText-1517912810392]: 
-                    isEnabled: false
-                    textValue: 
-                      - xmlizable: 
-                        - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-                        - MobileSmartSourceType: script:this.window.JSON.stringify(item1517849900594)
-                  ↓FSImage [mobile.components.UIDynamicElement-1517912810405]: 
-                    beanData: |
-                      '{
-                       "ionBean": "FSImage",
-                       "docid": "source:{\"filter\":\"Iteration\",\"project\":\"sampleMobileOffChat\",\"input\":\"item1517849900594?.id\"}",
-                       "attachment": "plain:img.jpeg",
-                       "placeholder": "plain:assets\/icon.svg",
-                       "requestable": "plain:sampleMobileOffChat.offchat_fullsync",
-                       "alt": "plain:image"
-                      }'
-                    selfClose: true
-                    tagName: img
-↓Footer [mobile.components.UIDynamicElement-1517849498139]: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: source:{"filter":"Iteration","project":"sampleMobileOffChat","input":"item1517849900594?.value?.user"}
+              ↓H3 [ngx.components.UIDynamicElement-1517913423897]: 
+                beanData: '{"ionBean":"Heading3"}'
+                tagName: h3
+                ↓Text1 [ngx.components.UIText-1517912810341]: 
+                  i18n: true
+                  textValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: source:{"filter":"Iteration","project":"sampleMobileOffChat","input":"item1517849900594?.value?.message"}
+              ↓Directive [ngx.components.UIControlDirective-1517912810374]: 
+                directiveName: If
+                directiveSource: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: source:{"filter":"Iteration","project":"sampleMobileOffChat","input":"item1517849900594?.doc?._attachments"}
+                ↓Text3 [ngx.components.UIText-1517912810392]: 
+                  i18n: true
+                  isEnabled: false
+                  textValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:this.window.JSON.stringify(item1517849900594)
+                ↓FSImage [ngx.components.UIDynamicElement-1517912810405]: 
+                  beanData: |
+                    '{
+                     "ionBean": "FSImage",
+                     "docid": "source:{\"filter\":\"Iteration\",\"project\":\"sampleMobileOffChat\",\"input\":\"item1517849900594?.id\"}",
+                     "attachment": "plain:img.jpeg",
+                     "placeholder": "plain:assets\/icon.svg",
+                     "requestable": "plain:sampleMobileOffChat.offchat_fullsync",
+                     "alt": "plain:image"
+                    }'
+                  selfClose: true
+                  tagName: img
+↓Footer [ngx.components.UIDynamicElement-1517849498139]: 
   beanData: '{"ionBean":"Footer"}'
   tagName: ion-footer
-  ↓ToolBar [mobile.components.UIDynamicElement-1517849498172]: 
+  ↓ToolBar [ngx.components.UIDynamicElement-1517849498172]: 
     beanData: '{"ionBean":"ToolBar","IonColor":"plain:primary"}'
     tagName: ion-toolbar
-    ↓Style [mobile.components.UIStyle-1517849498205]: 
+    ↓Style [ngx.components.UIStyle-1517849498205]: 
       styleContent: 
         - xmlizable: 
           - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
           - com.twinsoft.convertigo.beans.common.FormatedContent: 
             →: |
               '	text-align: center;
-              	color: color($colors, secondary);
+              	color: var(--ion-color-secondary);
               '
-    ↓Directive [mobile.components.UIControlDirective-1518097160507]: 
+    ↓Directive [ngx.components.UIControlDirective-1518097160507]: 
       directiveExpression: this.window.sessionStorage.offline == 'true'
       directiveName: If
-      ↓Icon [mobile.components.UIDynamicElement-1518097160532]: 
+      ↓Icon [ngx.components.UIDynamicElement-1518097160532]: 
         beanData: '{"ionBean":"Icon","IconName":"plain:plane"}'
         tagName: ion-icon
-      ↓Text [mobile.components.UIText-1518097160557]: 
+      ↓Text [ngx.components.UIText-1518097160557]: 
+        i18n: true
         textValue: 
           - xmlizable: 
-            - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
             - MobileSmartSourceType: plain:Offline Mode
-      ↓Icon1 [mobile.components.UIDynamicElement-1518097160580]: 
+      ↓Icon1 [ngx.components.UIDynamicElement-1518097160580]: 
         beanData: '{"ionBean":"Icon","IconName":"plain:plane"}'
         tagName: ion-icon
-    ↓Text [mobile.components.UIText-1517849498243]: 
+    ↓Text [ngx.components.UIText-1517849498243]: 
+      i18n: true
       textValue: 
         - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
           - MobileSmartSourceType: plain:© Convertigo
-↓PageEvent [mobile.components.UIPageEvent-1517849657943]: 
-  ↓QueryView [mobile.components.UIDynamicAction-1517849678307]: 
+↓PageEvent [ngx.components.UIPageEvent-1517849657943]: 
+  ↓QueryView [ngx.components.UIDynamicAction-1517849678307]: 
     beanData: |
       '{
        "ionBean": "FullSyncViewAction",

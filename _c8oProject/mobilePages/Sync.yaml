@@ -16,27 +16,29 @@ scriptContent:
         '
 segment: Sync
 title: Title for Sync
-↓Header [mobile.components.UIDynamicElement-1517841328972]: 
+↓Header [ngx.components.UIDynamicElement-1517841328972]: 
   beanData: '{"ionBean":"Header"}'
   tagName: ion-header
-  ↓NavBar [mobile.components.UIDynamicElement-1517841328998]: 
-    beanData: '{"ionBean":"NavBar","IonColor":"plain:primary"}'
-    tagName: ion-navbar
-    ↓BarTitle [mobile.components.UIDynamicElement-1517841329024]: 
+  ↓ToolBar [ngx.components.UIDynamicElement-1517841328998]: 
+    beanData: '{"ionBean":"ToolBar","IonColor":"plain:primary"}'
+    tagName: ion-toolbar
+    ↓BarTitle [ngx.components.UIDynamicElement-1517841329024]: 
       beanData: '{"ionBean":"BarTitle"}'
       tagName: ion-title
-      ↓TextFormat [mobile.components.UIDynamicElement-1517841329048]: 
-        beanData: '{"ionBean":"TextFormat","TextCenter":"plain:text-center"}'
+      ↓FormatLayout [ngx.components.UIDynamicAttr-1643627908855]: 
+        beanData: '{"ionBean":"FormatLayout","TextAlignment":"plain:ion-text-center"}'
+        comment: FormatLayout
         tagName: div
-        ↓Text [mobile.components.UIText-1517841329074]: 
-          textValue: 
-            - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
-              - MobileSmartSourceType: plain:OffChat Sync
-↓Content [mobile.components.UIDynamicElement-1517841344920]: 
+      ↓Text [ngx.components.UIText-1517841329074]: 
+        i18n: true
+        textValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: plain:OffChat Sync
+↓Content [ngx.components.UIDynamicElement-1517841344920]: 
   beanData: '{"ionBean":"Content"}'
   tagName: ion-content
-  ↓Style [mobile.components.UIStyle-1517841643117]: 
+  ↓Style [ngx.components.UIStyle-1517841643117]: 
     styleContent: 
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
@@ -48,36 +50,36 @@ title: Title for Sync
             	animation-iteration-count: infinite;
             	animation-timing-function: ease-in-out;
             '
-↓Footer [mobile.components.UIDynamicElement-1517841335763]: 
+↓Footer [ngx.components.UIDynamicElement-1517841335763]: 
   beanData: '{"ionBean":"Footer"}'
   tagName: ion-footer
-  ↓ToolBar [mobile.components.UIDynamicElement-1517841335793]: 
+  ↓ToolBar [ngx.components.UIDynamicElement-1517841335793]: 
     beanData: '{"ionBean":"ToolBar","IonColor":"plain:primary"}'
     tagName: ion-toolbar
-    ↓Style [mobile.components.UIStyle-1517841335823]: 
+    ↓Style [ngx.components.UIStyle-1517841335823]: 
       styleContent: 
         - xmlizable: 
           - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
           - com.twinsoft.convertigo.beans.common.FormatedContent: 
             →: |
               '	text-align: center;
-              	color: color($colors, secondary);
+              	color: var(--ion-color-secondary);
               '
-    ↓Text [mobile.components.UIText-1517841335854]: 
+    ↓Text [ngx.components.UIText-1517841335854]: 
+      i18n: true
       textValue: 
         - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.mobile.components.MobileSmartSourceType
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
           - MobileSmartSourceType: plain:© Convertigo
-↓PageEvent [mobile.components.UIPageEvent-1517842433048]: 
-  ↓Toast [mobile.components.UIDynamicAction-1517845209579]: 
+↓PageEvent [ngx.components.UIPageEvent-1517842433048]: 
+  ↓Toast [ngx.components.UIDynamicAction-1517845209579]: 
     beanData: |
       '{
        "ionBean": "ToastAction",
        "message": "script:this.translate.instant(''Welcome '') + this.window.sessionStorage.username + this.translate.instant('', sync in progress!'')",
-       "duration": "plain:10000",
-       "dismissOnPageChange": "plain:true"
+       "duration": "plain:10000"
       }'
-  ↓SyncData [mobile.components.UIDynamicAction-1518010028402]: 
+  ↓SyncData [ngx.components.UIDynamicAction-1518010028402]: 
     beanData: '{"ionBean":"FullSyncSyncAction","requestable":"plain:sampleMobileOffChat.offchat_fullsync"}'
-    ↓RootPage [mobile.components.UIDynamicAction-1517842553795]: 
+    ↓RootPage [ngx.components.UIDynamicAction-1517842553795]: 
       beanData: '{"ionBean":"RootPageAction","page":"plain:sampleMobileOffChat.OffChat.OffChat.Lobby"}'

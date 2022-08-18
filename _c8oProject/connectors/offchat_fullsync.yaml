@@ -1,7 +1,6 @@
 ↑default: true
 databaseName: offchat_fullsync
 ↓GetDocumentAttachment [transactions.couchdb.GetDocumentAttachmentTransaction]: 
-  accessibility: Private
   ↓_use_attpath [variables.RequestableVariable-1433424975372]: 
     description: Attachment path | This path is either absolute or relative to Convertigo environment. Relative paths starting with:<br/><br/>• <span class="computer">./</span> are relative to Convertigo workspace,<br/>• <span class="computer">.//</span> are relative to current project folder. <br/><br/>
   ↓_use_attname [variables.RequestableVariable-1433424975374]: 
@@ -10,9 +9,7 @@ databaseName: offchat_fullsync
     description: Document ID
 ↓GetServerInfo [transactions.couchdb.GetServerInfoTransaction]: 
   ↑default: true
-  accessibility: Private
 ↓NewMessageTo [transactions.couchdb.PostDocumentTransaction]: 
-  accessibility: Private
   fullSyncAclPolicy: fromKeyC8oAcl
   policy: override
   ↓_c8oAcl [variables.RequestableVariable-1517924398281]: 
@@ -41,7 +38,6 @@ databaseName: offchat_fullsync
           - ↑pLocalPart: long
           - ↑pNamespace: http://www.w3.org/2001/XMLSchema
 ↓PutDocumentAttachment [transactions.couchdb.PutDocumentAttachmentTransaction]: 
-  accessibility: Private
   ↓_use_attname [variables.RequestableVariable-1433425006835]: 
     description: Attachment name
   ↓_use_docid [variables.RequestableVariable-1433425006839]: 
@@ -51,9 +47,7 @@ databaseName: offchat_fullsync
   ↓_use_attcontent_type [variables.RequestableVariable-1602054003700]: 
     description: Attachment ContentType  Define the ContentType of the attachment. This is the ContentType returned when the attachment is requested.
 ↓ResetDatabase [transactions.couchdb.ResetDatabaseTransaction]: 
-  accessibility: Private
 ↓UserAdd [transactions.couchdb.PostDocumentTransaction]: 
-  accessibility: Private
   fullSyncAclPolicy: fromKeyC8oAcl
   policy: create
   handlers: 
@@ -79,12 +73,10 @@ databaseName: offchat_fullsync
     description: Set the owner of the document if the "Acl Policy"="From _c8oACL variable"
     value: admin
 ↓UserExists [transactions.couchdb.GetViewTransaction]: 
-  accessibility: Private
   q_reduce: false
   viewname: OffChat/checkUsername
   ↓_use_key [variables.RequestableVariable-1426253269087]: 
 ↓UserListSet [transactions.couchdb.PostDocumentTransaction]: 
-  accessibility: Private
   fullSyncAclPolicy: anonymous
   policy: override
   useHash: true
