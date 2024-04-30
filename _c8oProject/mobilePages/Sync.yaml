@@ -77,7 +77,8 @@ title: Title for Sync
       '{
        "ionBean": "ToastAction",
        "message": "script:this.translate.instant(''Welcome '') + this.window.sessionStorage.username + this.translate.instant('', sync in progress!'')",
-       "duration": "plain:10000"
+       "duration": "plain:10000",
+       "cssClass": "plain:"
       }'
   ↓SyncData [ngx.components.UIDynamicAction-1518010028402]: 
     beanData: '{"ionBean":"FullSyncSyncAction","requestable":"plain:sampleMobileOffChat.offchat_fullsync"}'

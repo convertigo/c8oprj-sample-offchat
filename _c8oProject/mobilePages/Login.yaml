@@ -97,7 +97,12 @@ title: Title for Login
                  "verb": "plain:reset"
                 }'
               ↓Toast [ngx.components.UIDynamicAction-1517828126515]: 
-                beanData: '{"ionBean":"ToastAction","message":"plain:Reset done!"}'
+                beanData: |
+                  '{
+                   "ionBean": "ToastAction",
+                   "message": "plain:Reset done!",
+                   "cssClass": "plain:"
+                  }'
 ↓Content [ngx.components.UIDynamicElement-1517567294948]: 
   beanData: '{"ionBean":"Content"}'
   tagName: ion-content
