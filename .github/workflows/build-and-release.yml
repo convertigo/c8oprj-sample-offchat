@@ -21,6 +21,7 @@ on: push
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: beta
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
@@ -57,9 +58,9 @@ jobs:
           restore-keys: ${{ runner.os }}-build-node-
     - name: Convertigo build, deploy to server and export the application
       env:
-        C8O_SERVER: ${{ secrets.C8O_SERVER_BETA }}
-        C8O_USER: ${{ secrets.C8O_USER_BETA }}
-        C8O_PASSWORD: ${{ secrets.C8O_PASSWORD_BETA }}
+        C8O_SERVER: ${{ secrets.C8O_SERVER }}
+        C8O_USER: ${{ secrets.C8O_USER }}
+        C8O_PASSWORD: ${{ secrets.C8O_PASSWORD }}
       run: |
         echo "Build, deploy to $C8O_SERVER and export to project.zip the application" && \
         sh gradlew --stacktrace --info car deploy launchRemoteBuild -x generateMobileBuilder \
@@ -71,3 +72,23 @@ jobs:
       with:
         name: project
         path: build/*.car
+  release:
+    if: startsWith(github.ref, 'refs/tags/')
+    needs: build
+    runs-on: ubuntu-latest
+    container: cibuilds/github:latest
+    steps:
+      - name: Download CAR File
+        uses: actions/download-artifact@v4
+        with:
+          name: project
+
+      - name: Deploy to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: '*.car'
+          tag_name: ${{ github.ref_name }}
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
