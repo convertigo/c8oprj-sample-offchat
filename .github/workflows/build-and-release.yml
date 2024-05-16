@@ -33,7 +33,7 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
     - name: Cache Gradle Dependencies
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
           path: |
              ~/.gradle/caches
@@ -48,7 +48,7 @@ jobs:
         sh gradlew --stacktrace --info generateMobileBuilder export -x compileMobileBuilder \
           -Pconvertigo.load.mobileApplicationEndpoint=$C8O_SERVER
     - name: Cache Node Modules
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
           path: |
             ${{ github.workspace }}/_private/ionic/node_modules
@@ -68,7 +68,7 @@ jobs:
           -Pconvertigo.deploy.user=$C8O_USER \
           -Pconvertigo.deploy.password=$C8O_PASSWORD
     - name: Save application project
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: project
         path: build/*.car
