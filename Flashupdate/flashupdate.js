@@ -37,7 +37,7 @@ var F = {
 	reLastSlash: new RegExp("/$"),
 	reTailUrl: new RegExp("([^#?]*)/.*"),
 	startTime: new Date().getTime(),
-	canCopyFromApp: false,
+	canCopyFromApp: true,
 	currentFiles: null,
 	remoteFiles: null,
 	flashUpdateDir: null,
@@ -90,7 +90,12 @@ var F = {
     		msg += "\nException: " + sErr;
 		}
 		console.log("error: " + msg);
-		alert(F.debugStream + "\n" + msg);
+		var alertContent = F.debugStream;
+		var lines = F.debugStream.split("\n");
+		if (lines > 60) {
+			alertContent = lines.slice(0, 30).join("\n") + "\n\n... " + (lines.length - 60) + " lines ...\n\n" + lines.slice(-30).join("\n");
+		}
+		alert(alertContent+ "\n" + msg);
 	},
 	
 	init: function () {
@@ -109,39 +114,30 @@ var F = {
 		try {
 			F.env.platform = device.platform;
 			F.env.uuid = device.uuid;
-			
-			if ((F.env.platform == "Android" && F.cordovaVersion) || F.env.platform == "blackberry10" || F.env.platform == "Win32NT") {
-				F.canCopyFromApp = true;
-			}
 		} catch (err) {
 			// device feature disabled in config.xml
 		}
 		
-		if (F.env.platform == "blackberry10" || F.env.platform == "windows") {
-			// unsupported platform
-			F.redirectApp();
-		} else {
-			$.ajaxSetup({
-				cache: false
-			});
-			
-			var url = window.location.href.replace(F.reTailUrl, "$1/files.json");
-			$.ajax({
-				dataType: "json",
-				url: url,
-				success: function (data) {
-					try {
-						F.currentFiles = data;
-						F.getEnv();
-					} catch (err) {
-						F.error("catch init currentFile", err);
-					}
-				},
-				error: function (xhr, status, err) {
-					F.error("failed to retrieve current file list: " + url, err);
+		$.ajaxSetup({
+			cache: false
+		});
+		
+		var url = window.location.href.replace(F.reTailUrl, "$1/files.json");
+		$.ajax({
+			dataType: "json",
+			url: url,
+			success: function (data) {
+				try {
+					F.currentFiles = data;
+					F.getEnv();
+				} catch (err) {
+					F.error("catch init currentFile", err);
 				}
-			});
-		}
+			},
+			error: function (xhr, status, err) {
+				F.error("failed to retrieve current file list: " + url, err);
+			}
+		});
 	},
 	
 	getEnv: function () {
@@ -195,24 +191,15 @@ var F = {
 						
 						F.flashUpdateDir = flashUpdateDir;
 						
-						if (F.fsProtocol || F.env.platform == "blackberry10") {
+						if (F.fsProtocol) {
 							F.env.localBase = flashUpdateDir.toURL();
 						}
 						
 						if (!F.env.localBase) {
-							F.env.localBase = flashUpdateDir.fullPath;
+							F.env.localBase = flashUpdateDir.nativeURL ? flashUpdateDir.nativeURL : flashUpdateDir.fullPath;
 						}
 						
-						F.env.webLocalBase = flashUpdateDir.nativeURL ? flashUpdateDir.nativeURL : F.env.localBase;
-						if (!F.env.webLocalBase) {
-							F.env.webLocalBase = flashUpdateDir.fullPath;
-						}
-						
-						F.env.webLocalBase = F.env.webLocalBase.replace(F.reDoubleSlash, "$1$2").replace(F.reLastSlash, "");
-
-						F.env.localBase = F.env.platform != "windows" ?
-							F.env.localBase.replace(F.reDoubleSlash, "$1$2").replace(F.reLastSlash, "") :
-							F.env.webLocalBase;
+						F.env.webLocalBase = F.env.localBase = F.env.localBase.replace(F.reDoubleSlash, "$1$2").replace(F.reLastSlash, "");
 						
 						if (F.env.isLocal) {
 							F.isFlashUpdate();
@@ -238,7 +225,7 @@ var F = {
 			}
 			window.resolveLocalFileSystemURL(path, onSuccess, onError);
 		} else {
-			var quota = F.env.platform == "blackberry10" ? Math.pow(1024, 3) : 0;
+			var quota = 0;
 			window.requestFileSystem(LocalFileSystem.PERSISTENT, quota, onSuccess, onError);
 		}
 		
@@ -323,11 +310,11 @@ var F = {
 				
 				F.copyCordovaFiles(filesToCopy, function () {
 					F.debug("all cordova files writen");
-					// Handle special WKWebView for iOS
+					// Handle special WKWebView
 					if (window.Ionic !=  undefined){
-						// Handle special WKWebView for iOS
+						// Handle special WKWebView
 						if(window.Ionic.WebView.convertFileSrc){
-							F.moveiOS();
+							F.moveWkWebView();
 						}
 						else{
 							F.moveOthers();
@@ -341,7 +328,7 @@ var F = {
 		});
 	},
 	
-	moveiOS: function () {
+	moveWkWebView: function () {
 		window.location.href = window.Ionic.WebView.convertFileSrc(F.env.webLocalBase + "/index-fu.html");
 	},
 	
@@ -603,7 +590,12 @@ var F = {
 				nbTransfert++;
 				totalSize += file.size;
 				F.mkParentDirs(file.uri, function (parentDir, fileName) {
-					var source = (fromApp ? F.env.appBase : F.env.remoteBase) + "/" + file.uri + "?" + F.startTime;
+					var source;
+					if (fromApp) {
+						source = cordova.file.applicationDirectory + "www/" + file.uri;
+					} else {
+						source = F.env.remoteBase + "/" + file.uri + "?" + F.startTime;
+					}
 					var destination = F.env.localBase + "/" + file.uri;
 					new FileTransfer().download(
 						encodeURI(source),

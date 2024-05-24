@@ -12,6 +12,7 @@ For more technical informations : [documentation](./project.md)
 - [OffChat](#offchat)
     - [Pages](#pages)
         - [Chat](#chat)
+        - [Hack](#hack)
         - [Lobby](#lobby)
         - [Login](#login)
         - [Sync](#sync)
@@ -30,13 +31,13 @@ For more technical informations : [documentation](./project.md)
      <tr><td>To contribute</td><td>
 
      ```
-     sampleMobileOffChat=git@github.com:convertigo/c8oprj-sample-offchat.git:branch=8.3.0
+     sampleMobileOffChat=git@github.com:convertigo/c8oprj-sample-offchat.git:branch=beta
      ```
      </td></tr>
      <tr><td>To simply use</td><td>
 
      ```
-     sampleMobileOffChat=git@github.com:convertigo/c8oprj-sample-offchat/archive/8.3.0.zip
+     sampleMobileOffChat=git@github.com:convertigo/c8oprj-sample-offchat/archive/beta.zip
      ```
      </td></tr>
     </table>
@@ -48,6 +49,8 @@ For more technical informations : [documentation](./project.md)
 ### Pages
 
 #### Chat
+
+#### Hack
 
 #### Lobby
 
