@@ -16,12 +16,17 @@ name: Convertigo CI
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
-on: push
+on:
+  push:
+    branches:
+      - beta
+    tags:
+      - '**'
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment: beta
+    environment: ${{ github.ref_name == 'beta' && 'beta' || 'demo' }}
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
@@ -42,7 +47,7 @@ jobs:
           restore-keys: ${{ runner.os }}-gradle-caches-v1-
     - name: Convertigo generate application code
       env:
-        C8O_SERVER: ${{ secrets.C8O_SERVER_BETA }}
+        C8O_SERVER: ${{ secrets.C8O_SERVER }}
       run: |
         echo "Generate Mobile Builder App" && \
         sh gradlew --stacktrace --info generateMobileBuilder export -x compileMobileBuilder \

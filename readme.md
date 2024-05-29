@@ -12,7 +12,6 @@ For more technical informations : [documentation](./project.md)
 - [OffChat](#offchat)
     - [Pages](#pages)
         - [Chat](#chat)
-        - [Hack](#hack)
         - [Lobby](#lobby)
         - [Login](#login)
         - [Sync](#sync)
@@ -49,8 +48,6 @@ For more technical informations : [documentation](./project.md)
 ### Pages
 
 #### Chat
-
-#### Hack
 
 #### Lobby
 
