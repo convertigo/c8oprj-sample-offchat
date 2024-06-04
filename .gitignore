@@ -6,6 +6,8 @@
 /DisplayObjects/mobile/*
 !/DisplayObjects/mobile/assets
 
+/DisplayObjects/platforms/Android/config.xml
+
 /Flashupdate/
 
 /oas2/
@@ -14,4 +16,3 @@
 /build/
 
 .DS_Store
-config.xml
