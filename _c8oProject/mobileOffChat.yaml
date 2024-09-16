@@ -276,8 +276,13 @@ tplProjectName: mobilebuilder_tpl_8_3_0_ngx
       - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
       - com.twinsoft.convertigo.beans.common.FormatedContent: 
         →: |
-          'ion-content {
-              --background: url(''../../../../DisplayObjects/mobile/assets/icon.svg'') 50% 66% / 80% no-repeat fixed;
+          '/* Ionic old custom [hidden] attribute removed since Ionic 7 */
+          [hidden] {
+            display: none !important;
+          }
+          
+          ion-content {
+            --background: url(''../../../../DisplayObjects/mobile/assets/icon.svg'') 50% 66% / 80% no-repeat fixed;
           }
           
           p {
