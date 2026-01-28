@@ -1,14 +1,14 @@
-↑convertigo: 8.0.0.m006
+↑convertigo: 8.4.0.m006
 ↓sampleMobileOffChat [core.Project]: 
   comment: Mobile application sample of a chat that can be use offline using the FullSync
-  version: 8.3.0
+  version: 8.4.0
   ↓offchat_fullsync [connectors.FullSyncConnector]: 🗏 connectors/offchat_fullsync.yaml
   ↓Login [sequences.GenericSequence]: 🗏 sequences/Login.yaml
   ↓OnChat [sequences.GenericSequence]: 🗏 sequences/OnChat.yaml
   ↓Import_XSD_schema [references.ImportXsdSchemaReference]: 
     urlpath: http://localhost:18080/convertigo/xsd/couchdb/CouchDb.xsd
-  ↓project [references.ProjectSchemaReference]: 
-    projectName: mobilebuilder_tpl_8_3_0_ngx=https://github.com/convertigo/c8oprj-mobilebuilder-tpl/archive/mobilebuilder_tpl_8_3_0_ngx.zip
+  ↓project1 [references.ProjectSchemaReference]: 
+    projectName: mobilebuilder_tpl_8_4_0_ngx=https://github.com/convertigo/c8oprj-mobilebuilder-tpl/archive/mobilebuilder_tpl_8_4_0_ngx.zip
   ↓OffChat [core.MobileApplication]: 
     applicationBgColor: '#18bcf5'
     applicationDescription: Allow user to type chat message event if offline

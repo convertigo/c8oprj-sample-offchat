@@ -3,14 +3,18 @@ scriptContent:
     - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
     - com.twinsoft.convertigo.beans.common.FormatedContent: 
       →: |
-        '/*Begin_c8o_PageImport*/
+        /*Begin_c8o_PageImport*/
         /*End_c8o_PageImport*/
         /*Begin_c8o_PageDeclaration*/
-        	public window: any;
         	/*End_c8o_PageDeclaration*/
         /*Begin_c8o_PageConstructor*/
-                this.window = window;
         		/*End_c8o_PageConstructor*/
+        /*Begin_c8o_PageInitialization*/
+        		/*End_c8o_PageInitialization*/
+        /*Begin_c8o_PageAfterViewInit*/
+        		/*End_c8o_PageAfterViewInit*/
+        /*Begin_c8o_PageFinalization*/
+        		/*End_c8o_PageFinalization*/
         /*Begin_c8o_PageFunction*/
         	public validateForm() {
         	    var msg = this.form1517850194442.controls.message;
@@ -19,16 +23,16 @@ scriptContent:
         	    }, 50);
         	}
         	public clearForm() {
-        	    //this.window.document.getElementById(''photo'').setAttribute(''src'','''');
+        	    //this.window.document.getElementById('photo').setAttribute('src','');
         	    delete this.router.sharedObject.photo;
-        	    this.form1517850194442.controls.message.setValue('''');
+        	    this.form1517850194442.controls.message.setValue('');
         	    this.validateForm();
         	}
         	public toDate(ts) {
         	    return new Date(ts).toLocaleString();
         	}
         	/*End_c8o_PageFunction*/
-        '
+        
 segment: Chat
 title: Title for Chat
 ↓Header [ngx.components.UIDynamicElement-1517849497973]: 

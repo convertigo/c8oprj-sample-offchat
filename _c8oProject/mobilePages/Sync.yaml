@@ -3,17 +3,21 @@ scriptContent:
     - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
     - com.twinsoft.convertigo.beans.common.FormatedContent: 
       →: |
-        '/*Begin_c8o_PageImport*/
+        /*Begin_c8o_PageImport*/
         /*End_c8o_PageImport*/
         /*Begin_c8o_PageDeclaration*/
-        	public window: any;
         	/*End_c8o_PageDeclaration*/
         /*Begin_c8o_PageConstructor*/
-        		this.window = window;
         		/*End_c8o_PageConstructor*/
+        /*Begin_c8o_PageInitialization*/
+        		/*End_c8o_PageInitialization*/
+        /*Begin_c8o_PageAfterViewInit*/
+        		/*End_c8o_PageAfterViewInit*/
+        /*Begin_c8o_PageFinalization*/
+        		/*End_c8o_PageFinalization*/
         /*Begin_c8o_PageFunction*/
         	/*End_c8o_PageFunction*/
-        '
+        
 segment: Sync
 title: Title for Sync
 ↓Header [ngx.components.UIDynamicElement-1517841328972]: 
